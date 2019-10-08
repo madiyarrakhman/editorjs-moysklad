@@ -55,5 +55,17 @@ if (textArea.length) {
                 class: Marker,
             }
         },
+        data: JSON.parse($('.gwt-TextArea.field.b-validation-field').val()),
+        onChange: () => {
+            editor.save()
+                .then((outputData) => {
+                    console.log(outputData);
+                    $('.gwt-TextArea.field.b-validation-field').val(JSON.stringify(outputData));
+                })
+                .catch((error) => {
+                    console.log('Saving failed: ', error)
+                });
+        }
     });
+
 }
