@@ -30,9 +30,12 @@ if (textArea.length) {
                 class: ImageTool,
                 config: {
                     endpoints: {
-                        byFile: 'http://nemo2.d/attachment/upload/add', // Your backend file uploader endpoint
+                        byFile: 'https://api.kraken.io/v1/upload', // Your backend file uploader endpoint
                         //byUrl: 'http://localhost:8008/fetchUrl', // Your endpoint that provides uploading by Url
                     },
+                    additionalRequestData: {
+                        "data": '{ "auth": { "api_key": "6831fcadf58aa6b6aec3cf441ab49989", "api_secret": "40c0b311aa02255563b437bf1d9678c0cb10990d" }, "wait": true }'
+                    }
                 }
             },
             embed: {
