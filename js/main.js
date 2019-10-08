@@ -5,6 +5,7 @@ if (textArea.length) {
     const editor = new EditorJS({
         holder: 'codex-editor',
         autofocus: true,
+        placeholder: 'Сюда описание товара!',
         tools: {
             header: {
                 class: Header,
@@ -43,6 +44,13 @@ if (textArea.length) {
                     }
                 }
             },
+            paragraph: {
+                class: Paragraph,
+                inlineToolbar: true,
+            },
+            marker: {
+                class: Marker,
+            }
         },
     });
 }
