@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "Editor.js для МоегоСклада",
+    "description": "Визуальный редактор блочного типа для МоегоСклада",
+    "version": "1.0.0",
+    "icons": {
+        "128": "icon_128.png"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+    "permissions": ["activeTab"],
+    "content_scripts": [{
+        "js": [
+            "node_modules/jquery/dist/jquery.min.js",
+            "js/main.js",
+            "node_modules/@editorjs/editorjs/dist/editor.js",
+            "node_modules/@editorjs/header/dist/bundle.js",
+            "node_modules/@editorjs/list/dist/bundle.js",
+            "node_modules/@editorjs/simple-image/dist/bundle.js",
+            "node_modules/@editorjs/raw/dist/bundle.js",
+            "node_modules/@editorjs/checklist/dist/bundle.js",
+            "node_modules/@editorjs/image/dist/bundle.js",
+            "node_modules/@editorjs/embed/dist/bundle.js"
+        ],
+        "matches": ["http://*/*", "https://*/*"]
+    }]
+}

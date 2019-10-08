@@ -1,0 +1,26 @@
+{
+  "name": "editorjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "@editorjs/checklist": "^1.1.0",
+    "@editorjs/editorjs": "^2.15.1",
+    "@editorjs/embed": "^2.2.1",
+    "@editorjs/header": "^2.3.0",
+    "@editorjs/image": "^2.3.2",
+    "@editorjs/link": "^2.1.3",
+    "@editorjs/list": "^1.4.0",
+    "@editorjs/paragraph": "^2.6.0",
+    "@editorjs/raw": "^2.1.1",
+    "@editorjs/simple-image": "^1.3.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
