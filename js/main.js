@@ -1,5 +1,11 @@
-var textArea = $('.b-guide-editor');
-
+var textArea = $('.b-guide-editor'),
+    descInput = $('.gwt-TextArea.field.b-validation-field').val();
+if (descInput.length) {
+    descInput = JSON.parse(descInput);
+    console.log(descInput.length);
+} else {
+    descInput = false;
+}
 if (textArea.length) {
     textArea.after('<div id="codex-editor" class="border" style="border: 1px solid #dee2e6 !important; "></div>');
     const editor = new EditorJS({
@@ -30,12 +36,12 @@ if (textArea.length) {
                 class: ImageTool,
                 config: {
                     endpoints: {
-                        byFile: 'https://api.kraken.io/v1/upload', // Your backend file uploader endpoint
-                        //byUrl: 'http://localhost:8008/fetchUrl', // Your endpoint that provides uploading by Url
+                        byFile: 'https://nemo.kz/admin/admin/upload'
                     },
-                    additionalRequestData: {
-                        "data": '{ "auth": { "api_key": "6831fcadf58aa6b6aec3cf441ab49989", "api_secret": "40c0b311aa02255563b437bf1d9678c0cb10990d" }, "wait": true }'
-                    }
+                    field: 'image',
+                    // additionalRequestData: {
+                    // "data": '{ "auth": { "api_key": "6831fcadf58aa6b6aec3cf441ab49989", "api_secret": "40c0b311aa02255563b437bf1d9678c0cb10990d" }, "wait": true }'
+                    // }
                 }
             },
             embed: {
@@ -55,7 +61,7 @@ if (textArea.length) {
                 class: Marker,
             }
         },
-        data: JSON.parse($('.gwt-TextArea.field.b-validation-field').val()),
+        data: descInput,
         onChange: () => {
             editor.save()
                 .then((outputData) => {
